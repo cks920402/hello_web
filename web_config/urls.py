@@ -18,9 +18,11 @@ from django.urls import path
 from restapi import views as restapiview
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', restapiview.home, name = 'home'),
-    path('restapi/task/string', restapiview.taskstring, name = 'restapi_task_string'),
+    path('hello/responsewithhtml/', restapiview.responsewithhtml),
+    path('hello/form/', restapiview.form, name='helloform'),
+    # path('admin/', admin.site.urls),
+    # path('', restapiview.home, name = 'home'),
+    # path('restapi/task/string', restapiview.taskstring, name = 'restapi_task_string'),
     # path('restapi/task/xml', restapiview.taskxml, name = 'restapi_task_xml'),
     # path('restapi/task/json', restapiview.taskjson, name='restapi_task_json')
 ]

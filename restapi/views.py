@@ -1,12 +1,22 @@
 from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 
-def home(request):
-    return HttpResponse("Hello, Django")
+def form(request):
+    return render(request, 'hello/requestform.html')
 
-def taskstring(request):
-    result = 'Rest API string'
-    return HttpResponse(result, content_type = "text/plain")
+def responsewithhtml(request):
+    # data = {'first':'Sanghun', 'second':'Oh'}
+    data = dict()
+    data['first']=request.GET['first1']
+    data['second']=request.GET['second1']
+    return render(request, 'hello/responsewithhtml.html', context=data)
+
+# def home(request):
+#     return HttpResponse("Hello, Django")
+
+# def taskstring(request):
+#     result = 'Rest API string'
+#     return HttpResponse(result, content_type = "text/plain")
 
 # def taskxml(request):
 #     result = '''<employees><employee>\
